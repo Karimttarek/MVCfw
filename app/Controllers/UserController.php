@@ -1,17 +1,20 @@
 <?php
 
-namespace PHPMVC\Controllers;
+namespace PHPMVC\App\Controllers;
+
+use PHPMVC\App\Models\UserModel;
+use PHPMVC\Lib\Database\PDODatabaseHandler;
 
 class UserController extends Controller
 {
 
     public function index()
     {
-        echo 'Controller';
+        /**
+         * Compact data [] to view
+         */
+        $this->data['users'] =  UserModel::getAll();
+        $this->view('user/create');
     }
-
-    public function defaultAction()
-    {
-        $this->view();
-    }
+    
 }

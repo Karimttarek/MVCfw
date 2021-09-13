@@ -1,5 +1,5 @@
 <?php
-namespace PHPMVC\Lib\Database;
+namespace PHPMVC\App\Lib\Database;
 
 class MySQLiDatabaseHandler extends DatabaseHandler
 {

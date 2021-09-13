@@ -1,6 +1,8 @@
 <?php
 
-namespace PHPMVC\Controllers;
+namespace PHPMVC\App\Controllers;
+
+use PHPMVC\FrontController;
 
 abstract class Controller
 {
@@ -9,9 +11,16 @@ abstract class Controller
     protected $action;
     protected $params;
 
-
+    /**
+     * Data variables
+     */
+    protected $data = [];
+    /**
+     * if action does not exist in controller
+     * return Not Found page
+     */
     public function notFound(){
-        echo 'This page doesn\,t exists';
+        require_once RESOURCE_VIEW_PATH .  'notfound.php';
     }
 
     /**
@@ -38,8 +47,16 @@ abstract class Controller
     /**
      * Render View
      */
-    protected function view()
-    {
-        echo $this->controller , $this->action;
+    protected function view($path)
+    {   
+        $view = VIEW_PATH . $path .'.php';
+        if(file_exists($view)){
+            /**
+             *  extract : compact data from controller to view
+             *  return view(PATH)
+             */
+            extract($this->data);
+            require_once $view;
+        }
     }
 }

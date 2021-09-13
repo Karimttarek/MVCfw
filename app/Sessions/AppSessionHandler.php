@@ -1,10 +1,11 @@
 <?php
 
+namespace PHPMVC\App\Sessions;
 
 define('DS' , DIRECTORY_SEPARATOR);
 define('SESSION_SAVE_PATH' , dirname(realpath(__FILE__)));
 
-class AppSessionHandler extends SessionHandler
+class AppSessionHandler extends \SessionHandler
 {
     private $sessionName = 'APPSESS';
     private $sessionMaxLifeTime = 0;

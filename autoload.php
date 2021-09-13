@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPMVC\Lib;
+namespace PHPMVC;
 
 use Exception;
 

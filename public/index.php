@@ -2,7 +2,7 @@
 
 namespace PHPMVC;
 
-use PHPMVC\Lib\FrontController;
+use PHPMVC\FrontController;
 
 // if(!defined('DS')) {
 //     define('DS', DIRECTORY_SEPARATOR);
@@ -16,5 +16,5 @@ use PHPMVC\Lib\FrontController;
 require_once '..' . DIRECTORY_SEPARATOR . 'config.php';
 require_once '..' . DIRECTORY_SEPARATOR . 'autoload.php';
 
-$frontController = new FrontController();
+$frontController = new FrontController;
 $frontController->dispatch();
