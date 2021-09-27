@@ -1,2 +1,2 @@
-# MVCfw
+# PHPMVC Framework
 PHP MVC Framework
